@@ -26,7 +26,7 @@ const Experience: React.FC<ExperienceProps> = (props) => {
                 </p>
                 <br />
                 <p>
-                    公司在探索能承载人与人情感连接的 AI 产品。我在这里做大模型记忆层优化和上下文工程，也在独立推进自己的产品。工程和产品的边界在这里很模糊——我喜欢这种模糊。
+                    公司在探索能承载人与人情感连接的 AI 产品。我负责大模型记忆层架构设计与上下文工程体系搭建，同时独立推进自有产品。工程和产品的边界在这里很模糊——我喜欢这种模糊。
                 </p>
             </div>
             <div style={styles.headerContainer}>
@@ -42,7 +42,7 @@ const Experience: React.FC<ExperienceProps> = (props) => {
             </div>
             <div className="text-block">
                 <p>
-                    我的第一段正经实习。做超大规模 VoiceAgent，主要在 VAD 模块和实时通讯优化上下功夫。
+                    参与超大规模 VoiceAgent 系统构建。负责 VAD 模块开发与实时通讯链路的延迟优化。
                 </p>
                 <br />
                 <p>

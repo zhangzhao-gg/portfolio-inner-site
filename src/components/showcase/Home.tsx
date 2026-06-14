@@ -16,8 +16,8 @@ const Home: React.FC<HomeProps> = (props) => {
     return (
         <div style={styles.page}>
             <div style={styles.header}>
-                <h1 style={styles.name}>Henry Heffernan</h1>
-                <h2>Software Engineer</h2>
+                <h1 style={styles.name}>张钊</h1>
+                <h2 style={{ fontSize: 36 }}>AI 工程师 / Builder</h2>
             </div>
             <div style={styles.buttons}>
                 <Link containerStyle={styles.link} to="about" text="ABOUT" />
@@ -85,7 +85,7 @@ const styles: StyleSheetCSS = {
         cursor: 'pointer',
     },
     name: {
-        fontSize: 72,
+        fontSize: 96,
         marginBottom: 16,
         lineHeight: 0.9,
     },

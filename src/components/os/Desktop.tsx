@@ -2,15 +2,12 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Colors from '../../constants/colors';
 import ShowcaseExplorer from '../applications/ShowcaseExplorer';
 import Doom from '../applications/Doom';
-import OregonTrail from '../applications/OregonTrail';
 import ShutdownSequence from './ShutdownSequence';
-// import ThisComputer from '../applications/ThisComputer';
-import Henordle from '../applications/Henordle';
 import Toolbar from './Toolbar';
 import DesktopShortcut, { DesktopShortcutProps } from './DesktopShortcut';
-import Scrabble from '../applications/Scrabble';
 import { IconName } from '../../assets/icons';
 import Credits from '../applications/Credits';
+import BrowserApp from '../applications/BrowserApp';
 
 export interface DesktopProps {}
 
@@ -36,35 +33,41 @@ const APPLICATIONS: {
         shortcutIcon: 'showcaseIcon',
         component: ShowcaseExplorer,
     },
-    trail: {
-        key: 'trail',
-        name: 'The Oregon Trail',
-        shortcutIcon: 'trailIcon',
-        component: OregonTrail,
-    },
     doom: {
         key: 'doom',
         name: 'Doom',
         shortcutIcon: 'doomIcon',
         component: Doom,
     },
-    scrabble: {
-        key: 'scrabble',
-        name: 'Scrabble',
-        shortcutIcon: 'scrabbleIcon',
-        component: Scrabble,
-    },
-    henordle: {
-        key: 'henordle',
-        name: 'Henordle',
-        shortcutIcon: 'henordleIcon',
-        component: Henordle,
-    },
     credits: {
         key: 'credits',
         name: 'Credits',
         shortcutIcon: 'credits',
         component: Credits,
+    },
+    inbetween: {
+        key: 'inbetween',
+        name: 'Inbetween',
+        shortcutIcon: 'windowExplorerIcon',
+        component: (props: any) => (
+            <BrowserApp
+                {...props}
+                url="https://inbetween.okethan.top"
+                title="Inbetween"
+            />
+        ),
+    },
+    foreseen: {
+        key: 'foreseen',
+        name: 'Foreseen',
+        shortcutIcon: 'windowGameIcon',
+        component: (props: any) => (
+            <BrowserApp
+                {...props}
+                url="https://foreseen.okethan.top"
+                title="Foreseen"
+            />
+        ),
     },
 };
 

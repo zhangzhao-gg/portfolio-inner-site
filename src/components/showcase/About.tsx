@@ -14,7 +14,7 @@ const About: React.FC<AboutProps> = (props) => {
             <br />
             <div className="text-block">
                 <p>
-                    AI 工程师 / Builder，现就职于暴裂果实科技有限公司，专注于构建能够承载人与人情感连接的 AI 产品。
+                    AI 工程师 / Builder，现就职于北京某 AI 陪伴创业公司，专注于构建能够承载人与人情感连接的 AI 产品。
                 </p>
                 <br />
                 <p>

@@ -10,7 +10,7 @@ const Experience: React.FC<ExperienceProps> = (props) => {
             <div style={styles.headerContainer}>
                 <div style={styles.header}>
                     <div style={styles.headerRow}>
-                        <h1>暴裂果实科技</h1>
+                        <h1>某 AI 陪伴公司</h1>
                     </div>
                     <div style={styles.headerRow}>
                         <h3>AI 工程师实习</h3>

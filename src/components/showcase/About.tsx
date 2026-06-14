@@ -95,6 +95,12 @@ const About: React.FC<AboutProps> = (props) => {
                     <Link to="/contact">联系页面</Link> 找到我，或者发邮件到{' '}
                     <a href="mailto:1730239726@qq.com">1730239726@qq.com</a>
                 </p>
+                <br />
+                <p style={{ fontSize: 12, color: '#888' }}>
+                    本站基于{' '}
+                    <a rel="noreferrer" target="_blank" href="https://github.com/henryjeff">Henry Heffernan</a>
+                    {' '}的开源项目二次开发
+                </p>
             </div>
         </div>
     );

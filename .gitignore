@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 *.psd
+
+# 部署手册（本地保留，不上传）
+deploy.md

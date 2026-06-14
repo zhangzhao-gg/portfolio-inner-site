@@ -11,17 +11,15 @@ const CREDITS = [
         rows: [['张钊', 'All']],
     },
     {
-        title: 'Modeling & Texturing',
+        title: 'Open Source',
         rows: [
-            ['张钊', 'Texturing, Composition, & UV'],
-            ['Mickael Boitte', 'Computer Model'],
-            ['Sean Nicolas', 'Environment Models'],
+            ['Henry Heffernan', 'Original portfolio-inner-site'],
+            ['github.com/henryjeff', 'MIT License'],
         ],
     },
     {
         title: 'Sound Design',
         rows: [
-            ['张钊', 'Mixing, Composition, & Foley'],
             ['Sound Cassette', 'Office Ambience'],
             ['Windows 95 Startup Sound', 'Microsoft'],
         ],
@@ -29,16 +27,15 @@ const CREDITS = [
     {
         title: 'Special Thanks',
         rows: [
-            ['Bruno Simon', 'SimonDev'],
-            ['Lorelei Kravinsky', 'Scott Bass'],
-            ['Trey Briccetti', 'Mom, Dad & Angela'],
+            ['DK', 'greatdk.com'],
+            ['魏佳星', '云蝠智能'],
         ],
     },
     {
         title: 'Inspiration',
         rows: [
             ['Bruno Simon', 'Jesse Zhou'],
-            ['Pink Yellow', 'Vivek Patel'],
+            ['Henry Heffernan', 'Original Creator'],
         ],
     },
 ];

@@ -48,7 +48,7 @@ const APPLICATIONS: {
     inbetween: {
         key: 'inbetween',
         name: 'Inbetween',
-        shortcutIcon: 'windowExplorerIcon',
+        shortcutIcon: 'inbetweenIcon',
         component: (props: any) => (
             <BrowserApp
                 {...props}
@@ -60,7 +60,7 @@ const APPLICATIONS: {
     foreseen: {
         key: 'foreseen',
         name: 'Foreseen',
-        shortcutIcon: 'windowGameIcon',
+        shortcutIcon: 'foreseenIcon',
         component: (props: any) => (
             <BrowserApp
                 {...props}

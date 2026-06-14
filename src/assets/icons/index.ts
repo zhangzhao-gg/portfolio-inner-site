@@ -15,6 +15,8 @@ import volumeOff from './volumeOff.png';
 import trailIcon from './trailIcon.png';
 import windowGameIcon from './windowGameIcon.png';
 import windowExplorerIcon from './windowExplorerIcon.png';
+import inbetweenIcon from './inbetweenIcon.png';
+import foreseenIcon from './foreseenIcon.png';
 import windowsStartIcon from './windowsStartIcon.png';
 import scrabbleIcon from './scrabbleIcon.png';
 import close from './close.png';
@@ -36,6 +38,8 @@ const icons = {
     close: close,
     windowGameIcon: windowGameIcon,
     windowExplorerIcon: windowExplorerIcon,
+    inbetweenIcon: inbetweenIcon,
+    foreseenIcon: foreseenIcon,
     windowsStartIcon: windowsStartIcon,
     trailIcon: trailIcon,
 };

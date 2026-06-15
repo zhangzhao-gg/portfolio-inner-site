@@ -266,6 +266,158 @@ input:active {
     overflow-y: scroll;
 }
 
+.welcome-page {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 980px);
+    padding-right: 48px;
+    box-sizing: border-box;
+}
+
+.welcome-title {
+    margin-left: -16px;
+    margin-bottom: 8px;
+}
+
+.welcome-intro {
+    margin-bottom: 24px;
+    max-width: 820px;
+}
+
+.welcome-story {
+    margin-bottom: 24px;
+    max-width: 900px;
+}
+
+.welcome-child-figure {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 8px 0 32px;
+}
+
+.welcome-child-figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: var(--border-field);
+}
+
+.welcome-child-figure figcaption {
+    margin-top: 8px;
+    text-align: center;
+    font-family: Millennium, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.welcome-child-figure figcaption b {
+    font-family: MillenniumBold, 'Times New Roman', Times, serif;
+}
+
+.welcome-spacer {
+    height: 40px;
+}
+
+.welcome-hobbies {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.welcome-hobbies-heading {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.welcome-hobbies-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: start;
+}
+
+.welcome-hobby-copy {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.welcome-hobby-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-hobby-side img {
+    width: 100%;
+    height: auto;
+    box-shadow: var(--border-field);
+}
+
+.welcome-hobby-side p {
+    width: 100%;
+    text-align: center;
+}
+
+.welcome-hobby-note {
+    display: flex;
+    margin-top: 24px;
+}
+
+.welcome-hobby-note p {
+    text-align: justify;
+}
+
+.welcome-hobby-bottom {
+    margin-top: 24px;
+}
+
+.welcome-footer {
+    max-width: 900px;
+}
+
+@media (max-width: 900px) {
+    .site-page-content {
+        margin-left: 0;
+        padding: 32px 24px 64px;
+    }
+
+    .welcome-page {
+        padding-right: 0;
+    }
+
+    .welcome-title {
+        margin-left: 0;
+    }
+
+    .welcome-hobbies-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .welcome-hobby-side {
+        max-width: 360px;
+        align-self: center;
+    }
+}
+
+@media (max-width: 560px) {
+    h1 {
+        font-size: 48px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .welcome-child-figure img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
 .router-link:visited {
     color: purple;
 }

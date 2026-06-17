@@ -20,6 +20,7 @@ import foreseenIcon from './foreseenIcon.png';
 import windowsStartIcon from './windowsStartIcon.png';
 import scrabbleIcon from './scrabbleIcon.png';
 import close from './close.png';
+import qqIcon from './qqIcon.svg';
 
 const icons = {
     windowResize: windowResize,
@@ -36,6 +37,7 @@ const icons = {
     scrabbleIcon: scrabbleIcon,
     henordleIcon: henordleIcon,
     close: close,
+    qqIcon: qqIcon,
     windowGameIcon: windowGameIcon,
     windowExplorerIcon: windowExplorerIcon,
     inbetweenIcon: inbetweenIcon,

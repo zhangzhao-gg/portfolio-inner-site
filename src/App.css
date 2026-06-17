@@ -27,6 +27,45 @@ div {
     color: #fff;
 }
 
+.tray-qq-flashing {
+    animation: tray-qq-flash 0.7s steps(1, end) infinite;
+}
+
+.qq-friend-row {
+    background-color: #ffffff;
+}
+
+.qq-friend-row:hover {
+    background-color: #d8d8d8;
+}
+
+.qq-friend-row:active {
+    background-color: #c0c0c0;
+    transform: translate(1px, 1px);
+}
+
+.qq-button:hover {
+    background-color: #d8d8d8 !important;
+}
+
+.qq-button:active {
+    transform: translate(1px, 1px);
+    border-top-color: #000000 !important;
+    border-left-color: #000000 !important;
+    border-right-color: #ffffff !important;
+    border-bottom-color: #ffffff !important;
+}
+
+@keyframes tray-qq-flash {
+    0%,
+    49% {
+        opacity: 1;
+    }
+    50%,
+    100% {
+        opacity: 0;
+    }
+}
 
 .blinking-cursor {
     background-color: #fff;

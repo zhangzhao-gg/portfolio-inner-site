@@ -8,6 +8,7 @@ import DesktopShortcut, { DesktopShortcutProps } from './DesktopShortcut';
 import { IconName } from '../../assets/icons';
 import Credits from '../applications/Credits';
 import BrowserApp from '../applications/BrowserApp';
+import QQChat from '../applications/QQChat';
 
 export interface DesktopProps {}
 
@@ -45,6 +46,12 @@ const APPLICATIONS: {
         shortcutIcon: 'credits',
         component: Credits,
     },
+    qq: {
+        key: 'qq',
+        name: 'QQ',
+        shortcutIcon: 'qqIcon',
+        component: QQChat,
+    },
     inbetween: {
         key: 'inbetween',
         name: 'Inbetween',
@@ -78,6 +85,7 @@ const Desktop: React.FC<DesktopProps> = (props) => {
 
     const [shutdown, setShutdown] = useState(false);
     const [numShutdowns, setNumShutdowns] = useState(1);
+    const [qqHasOpened, setQqHasOpened] = useState(false);
 
     useEffect(() => {
         if (shutdown === true) {
@@ -190,6 +198,9 @@ const Desktop: React.FC<DesktopProps> = (props) => {
 
     const addWindow = useCallback(
         (key: string, element: JSX.Element) => {
+            if (key === 'qq') {
+                setQqHasOpened(true);
+            }
             setWindows((prevState) => ({
                 ...prevState,
                 [key]: {
@@ -202,6 +213,22 @@ const Desktop: React.FC<DesktopProps> = (props) => {
             }));
         },
         [getHighestZIndex]
+    );
+
+    const openApplication = useCallback(
+        (key: string) => {
+            const app = APPLICATIONS[key];
+            addWindow(
+                app.key,
+                <app.component
+                    onInteract={() => onWindowInteract(app.key)}
+                    onMinimize={() => minimizeWindow(app.key)}
+                    onClose={() => removeWindow(app.key)}
+                    key={app.key}
+                />
+            );
+        },
+        [addWindow, minimizeWindow, onWindowInteract, removeWindow]
     );
 
     return !shutdown ? (
@@ -231,9 +258,13 @@ const Desktop: React.FC<DesktopProps> = (props) => {
                 {shortcuts.map((shortcut, i) => {
                     return (
                         <div
-                            style={Object.assign({}, styles.shortcutContainer, {
-                                top: i * 104,
-                            })}
+                            style={Object.assign(
+                                {},
+                                styles.shortcutContainer,
+                                {
+                                    top: i * 104,
+                                }
+                            )}
                             key={shortcut.shortcutName}
                         >
                             <DesktopShortcut
@@ -249,6 +280,8 @@ const Desktop: React.FC<DesktopProps> = (props) => {
                 windows={windows}
                 toggleMinimize={toggleMinimize}
                 shutdown={startShutdown}
+                qqHasOpened={qqHasOpened}
+                openQQ={() => openApplication('qq')}
             />
         </div>
     ) : (

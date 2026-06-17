@@ -9,13 +9,19 @@ export interface ToolbarProps {
     windows: DesktopWindows;
     toggleMinimize: (key: string) => void;
     shutdown: () => void;
+    qqHasOpened: boolean;
+    openQQ: () => void;
 }
 
 const Toolbar: React.FC<ToolbarProps> = ({
     windows,
     toggleMinimize,
     shutdown,
+    qqHasOpened,
+    openQQ,
 }) => {
+    const [showQQTip, setShowQQTip] = useState(false);
+
     const getTime = () => {
         const date = new Date();
         let hours = date.getHours();
@@ -181,6 +187,29 @@ const Toolbar: React.FC<ToolbarProps> = ({
                     </div>
                 </div>
                 <div style={styles.time}>
+                    {showQQTip && !qqHasOpened && (
+                        <div style={styles.qqTip}>
+                            <div style={styles.qqTipTitle}>张钊</div>
+                            <div style={styles.qqTipText}>
+                                给你发来了一条消息
+                            </div>
+                        </div>
+                    )}
+                    <button
+                        type="button"
+                        className={!qqHasOpened ? 'tray-qq-flashing' : ''}
+                        style={styles.trayButton}
+                        onMouseEnter={() => setShowQQTip(true)}
+                        onMouseLeave={() => setShowQQTip(false)}
+                        onMouseDown={(event) => {
+                            event.stopPropagation();
+                            setShowQQTip(false);
+                            openQQ();
+                        }}
+                        aria-label="Open QQ chat"
+                    >
+                        <Icon style={styles.trayIcon} icon="qqIcon" />
+                    </button>
                     <Icon style={styles.volumeIcon} icon="volumeOn" />
                     <p style={styles.timeText}>{time}</p>
                 </div>
@@ -350,8 +379,9 @@ const styles: StyleSheetCSS = {
         width: '100%',
     },
     time: {
+        position: 'relative',
         flexShrink: 1,
-        width: 86,
+        width: 112,
         height: 24,
         boxSizing: 'border-box',
         marginRight: 4,
@@ -367,6 +397,50 @@ const styles: StyleSheetCSS = {
     volumeIcon: {
         cursor: 'pointer',
         height: 18,
+    },
+    trayButton: {
+        display: 'flex',
+        width: 20,
+        height: 20,
+        padding: 0,
+        border: 'none',
+        background: 'transparent',
+        cursor: 'pointer',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    trayIcon: {
+        width: 18,
+        height: 18,
+    },
+    qqTip: {
+        position: 'absolute',
+        right: 52,
+        bottom: 28,
+        width: 180,
+        height: 58,
+        flexDirection: 'column',
+        boxSizing: 'border-box',
+        padding: 8,
+        backgroundColor: '#ffffd7',
+        border: `1px solid ${Colors.black}`,
+        borderTopColor: Colors.white,
+        borderLeftColor: Colors.white,
+        boxShadow: '2px 2px 0 rgba(0, 0, 0, 0.35)',
+        zIndex: 100001,
+        pointerEvents: 'none',
+    },
+    qqTipTitle: {
+        fontFamily: 'MSSerif',
+        fontSize: 13,
+        fontWeight: 700,
+        color: Colors.black,
+        marginBottom: 6,
+    },
+    qqTipText: {
+        fontFamily: 'MSSerif',
+        fontSize: 12,
+        color: Colors.black,
     },
     tabText: {
         fontSize: 14,
